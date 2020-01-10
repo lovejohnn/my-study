@@ -48,6 +48,7 @@
 		Enter passphrase (empty for no passphrase):<enter a passphrase>  直接敲回车
 		Enter same passphrase again:<enter passphrase again>直接敲回车
 		生成类似于下面的内容
+
 +--[ RSA 2032]----+  
 |     .+   +      |  
 |      ssssssss   |  
@@ -59,45 +60,50 @@
 |                 |  
 |                 |  
 +-----------------+  
-		打开我的电脑--》用户---》当前登录Windows的用户名文件夹----》.ssh文件夹-----》用记事本打开id_rsa.pub文件----》复制里面的内容
-		打开gitHub官网，登陆，选择进入创建的项目，选择右边的settings选项
-		选择Deploy keys
-			点击add deploy key 添加key
-		title填写用户名称+SSHkey，然后把刚才复制的内容直接粘贴到key里面，不要敲任何其他的按钮，点选Allow write access。然后点击add key。创建完成SSH的Key了
-上传项目到仓库中
-	创建一个文件
-		在刚才新建的本地仓库中创建一个文件，例如:ReadMe.txt
-		在gitBush窗口中输入：git add ReadMe.txt
-	告诉git要提交到仓库，并且添加注释
-		git commit -m "注释内容"
-	连接gitHub仓库地址
-		git remote add origin 刚才复制的地址
-	上传到gitHub服务器
-		git push -u origin master
-	取回远程仓库的变化，并与本地分支合并
-		git pull origin master
-	错误提示
-		Permission denied (publickey).  
-fatal: The remote end hung up unexpectedly 
-			这是没有权限，如果上一步中git创建版本库中设置ssh的key没有完成或者错误。
-				cd ~/.ssh 
-				rm id_rsa*
-				设置SSH的Key
-		failed to push some refs to git
-			这是因为gitHub创建时可能创建了README.md，但是版本没有合并
-				git pull --rebase origin master
-				然后做后续的操作就可以了
-		remote origin already exists
-			创建连接时提示，这是因为已经有了仓库，需要先删除远程仓库，git remote rm origin
-		git push时报错fatal: Could not read from remote repository.
-			设置的地址应该为https的，需要修改一下
-				git remote set-url origin XXX 
-从gitHub仓库下载项目到本地仓库
-	自己创建的项目库
-		git clone git@github.com:用户名/仓库名.git
-	别人创建好的项目
-		点击右上角的Fork，表示先复制到自己的仓库里
-		git clone git@github.com:用户名/仓库名.git
+
+###  具体步骤
+
+	打开我的电脑--》用户---》当前登录Windows的用户名文件夹----》.ssh文件夹-----》用记事本打开id_rsa.pub文件----》复制里面的内容
+	打开gitHub官网，登陆，选择进入创建的项目，选择右边的settings选项
+			选择Deploy keys
+				点击add deploy key 添加key
+			title填写用户名称+SSHkey，然后把刚才复制的内容直接粘贴到key里面，不要敲任何其他的按钮，点选Allow write access。然后点击add key。创建完成SSH的Key了
+	上传项目到仓库中
+		创建一个文件
+			在刚才新建的本地仓库中创建一个文件，例如:ReadMe.txt
+			在gitBush窗口中输入：git add ReadMe.txt
+		告诉git要提交到仓库，并且添加注释
+			git commit -m "注释内容"
+		连接gitHub仓库地址
+			git remote add origin 刚才复制的地址
+		上传到gitHub服务器
+			git push -u origin master
+		取回远程仓库的变化，并与本地分支合并
+			git pull origin master
+		错误提示
+			Permission denied (publickey).  
+	fatal: The remote end hung up unexpectedly 
+				这是没有权限，如果上一步中git创建版本库中设置ssh的key没有完成或者错误。
+					cd ~/.ssh 
+					rm id_rsa*
+					设置SSH的Key
+			failed to push some refs to git
+				这是因为gitHub创建时可能创建了README.md，但是版本没有合并
+					git pull --rebase origin master
+					然后做后续的操作就可以了
+			remote origin already exists
+				创建连接时提示，这是因为已经有了仓库，需要先删除远程仓库，git remote rm origin
+			git push时报错fatal: Could not read from remote repository.
+				设置的地址应该为https的，需要修改一下
+					git remote set-url origin XXX 
+	从gitHub仓库下载项目到本地仓库
+		自己创建的项目库
+			git clone git@github.com:用户名/仓库名.git
+		别人创建好的项目
+			点击右上角的Fork，表示先复制到自己的仓库里
+			git clone git@github.com:用户名/仓库名.git
+​		
+
 ## git所有命令
 	1. 新建代码库
 		# 在当前目录新建一个Git代码库

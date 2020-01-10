@@ -1,7 +1,9 @@
 # git 操作指南
-git的下载和安装
+
+
+## . git的下载和安装
 	windows的下载
-创建远程个gitHub仓库
+### 创建远程个gitHub仓库
 	打开gitHub网站
 		https://github.com/
 	注册gitHub会员
@@ -26,7 +28,7 @@ git的下载和安装
 			https://github.com/用户名/仓库名.git
 		SSH地址
 			git@github.com:用户名/仓库名.git
-git创建本地版本库
+### git创建本地版本库
 	打开windows菜单下安装好的git下的gitBush
 	修改当前盘符和路径
 		cd /盘符/目录
@@ -96,15 +98,15 @@ fatal: The remote end hung up unexpectedly
 	别人创建好的项目
 		点击右上角的Fork，表示先复制到自己的仓库里
 		git clone git@github.com:用户名/仓库名.git
-git所有命令
-	一、新建代码库
+## git所有命令
+	1. 新建代码库
 		# 在当前目录新建一个Git代码库
 			$ git init
 		# 新建一个目录，将其初始化为Git代码库
 			$ git init [project-name]
 		# 下载一个项目和它的整个代码历史
 			$ git clone [url]
-	二、配置
+	2. 配置
 		Git的设置文件为.gitconfig，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。
 		# 显示当前的Git配置
 			$ git config --list
@@ -113,7 +115,7 @@ git所有命令
 		# 设置提交代码时的用户信息
 			$ git config [--global] user.name "[name]"
 			$ git config [--global] user.email "[email address]"
-	三、增加/删除文件
+	3. 增加/删除文件
 		# 添加指定文件到暂存区
 			$ git add [file1] [file2] ...
 		# 添加指定目录到暂存区，包括子目录
@@ -129,7 +131,7 @@ git所有命令
 			$ git rm --cached [file]
 		# 改名文件，并且将这个改名放入暂存区
 			$ git mv [file-original] [file-renamed]
-	四、代码提交
+	4. 代码提交
 		# 提交暂存区到仓库区
 			$ git commit -m [message]
 		# 提交暂存区的指定文件到仓库区
@@ -143,7 +145,7 @@ git所有命令
 			$ git commit --amend -m [message]
 		# 重做上一次commit，并包括指定文件的新变化
 			$ git commit --amend [file1] [file2] ...
-	五、分支
+	5. 分支
 		# 列出所有本地分支
 			$ git branch
 		# 列出所有远程分支
@@ -173,7 +175,7 @@ git所有命令
 		# 删除远程分支
 			$ git push origin --delete [branch-name]
 			$ git branch -dr [remote/branch]
-	六、标签
+	6. 标签
 		# 列出所有tag
 			$ git tag
 		# 新建一个tag在当前commit
@@ -192,7 +194,7 @@ git所有命令
 			$ git push [remote] --tags
 		# 新建一个分支，指向某个tag
 			$ git checkout -b [branch] [tag]
-	七、查看信息
+	7. 查看信息
 		# 显示有变更的文件
 			$ git status
 		# 显示当前分支的版本历史
@@ -236,7 +238,7 @@ git所有命令
 			$ git reflog
 		# 从本地master拉取代码更新当前分支：branch 一般为master
 			$ git rebase [branch]
-	八、远程同步
+	8. 远程同步
 		$ git remote update  --更新远程仓储
 		# 下载远程仓库的所有变动
 			$ git fetch [remote]
@@ -254,7 +256,7 @@ git所有命令
 			$ git push [remote] --force
 		# 推送所有分支到远程仓库
 			$ git push [remote] --all
-	九、撤销
+	9. 撤销
 		# 恢复暂存区的指定文件到工作区
 			$ git checkout [file]
 		# 恢复某个commit的指定文件到暂存区和工作区
@@ -277,6 +279,6 @@ git所有命令
 		# 暂时将未提交的变化移除，稍后再移入
 			$ git stash
 			$ git stash pop
-	十、其他
+	10. 其他
 		# 生成一个可供发布的压缩包
 			$ git archive

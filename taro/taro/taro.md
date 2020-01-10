@@ -6,32 +6,30 @@
 
 ### 安装使用
 
-> 1. 安装Taro 开发工具 @tarojs/cli
-> 2. 使用npm 或者 yarn 全局安装 或者直接使用 npx
-> 3.  $npm install -g @tarojs/cli
-> 4.  $yarn global add @tarojs/cli
+1. 安装Taro 开发工具 @tarojs/cli
+2. 使用npm 或者 yarn 全局安装 或者直接使用 npx
+3. $npm install -g @tarojs/cli
+4. $yarn global add @tarojs/cli
 
 ### 开发打包命令
 
->使用命令创建模板项目
->
->taro init myApp
->
->开发期间启动命令
->
->npm run dev:h5 web
->
->npm run dev:weapp 微信小程序
->
->npm run dev:alipay  支付宝小程序
->
->npm run dev:swan 百度小程序
->
->npm run dev:rn  ReactNative
+ 1. 使用命令创建模板项目
 
-```
-npm 5.2+ 也可在不全局安装的情况下使用 npx 创建模板项目npx @tarojs/cli init myApp 
-```
+    taro init myApp
+
+ 2. 开发期间启动命令
+
+    npm run dev:h5 web
+
+    npm run dev:weapp 微信小程序
+
+    npm run dev:alipay  支付宝小程序
+
+    npm run dev:swan 百度小程序
+
+    npm run dev:rn  ReactNative
+
+3. npm 5.2+ 也可在不全局安装的情况下使用 npx 创建模板项目npx @tarojs/cli init myApp 
 
 
 
@@ -56,34 +54,34 @@ https://blog.csdn.net/wqnmlgbsz/article/details/100654258
 > 在 **Taro** 中，路由功能是默认自带的，不需要开发者进行额外的路由配置。
 >
 > 我们只需要在入口文件的 `config` 配置中指定好 `pages`，然后就可以在代码中通过 **Taro** 提供的 API 来跳转到目的页面
->
-> 例如
->
-> //跳转到目的页面，打开新页面
->
-> ```
-> Taro.navigateTo({
-> 	url:'/pages/page/path/name'
-> })
-> //还支持promise
-> import Taro from '@tarojs/taro'
-> 
-> Taro.navigateTo(params).then(...)
-> ```
->
-> 一些api
->
-> Taro.navigateTo( )
->
-> Taro.redirectTO( )
->
-> Taro.switchTab( )
->
-> Taro.navigateBack({ delta : 2 } )
->
-> Taro.reLaunch( )
->
-> Taro.getCurrentPages( ).length
+
+例如：跳转到目的页面，打开新页面
+
+```
+Taro.navigateTo({
+	url:'/pages/page/path/name'
+})
+//还支持promise
+import Taro from '@tarojs/taro'
+
+Taro.navigateTo(params).then(...)
+```
+
+相关 api
+
+```
+Taro.navigateTo( )
+
+Taro.redirectTO( )
+
+Taro.switchTab( )
+
+Taro.navigateBack({ delta : 2 } )
+
+Taro.reLaunch( )
+
+Taro.getCurrentPages( ).length
+```
 
 路由参数
 
